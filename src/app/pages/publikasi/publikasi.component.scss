@@ -1,0 +1,28 @@
+.section-event{
+    min-height: 100vh;
+    background-color: white;
+    padding-top: 120px;
+    padding-bottom: 40px;
+}
+
+.title-event{
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+h4.date{
+    font-size: .7rem;
+    color: #888;
+}
+
+a{
+    cursor: pointer;
+}
+
+a.active{
+    font-weight: bold;
+}
+
+a.router-card{
+    color: unset !important;
+}

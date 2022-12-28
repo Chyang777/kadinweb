@@ -1,0 +1,38 @@
+<section class="section-event">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-8">
+                <div class="row">
+                    <div *ngFor="let item of events" class="col-md-6">
+                        <div class="card">
+                            <a class="router-card" [routerLink]="'/event-detail/' + item.id"> 
+                                <!-- <img [src]="urls + 'images/events/' + item.image" /> -->
+                                <div class="image-event" [style.backgroundImage]="'url(' + urls + 'images/events/' + doEncode(item.image) + ')'"></div>
+                                <div class="card-body">
+                                    <h2 class="title-event">{{item.judul}}</h2>
+                                    <h4><i class="fa fa-map-marker"></i>&nbsp; {{item.lokasi}}</h4>
+                                    <h4><i class="fa fa-calendar"></i>&nbsp; {{item.mulai | date:"dd MMM yyyy HH:mm"}}</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12" *ngIf="events.length<=0 && !isLoading">
+                        <p class="empty-text">Acara yang anda cari belum tersedia</p>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="col-md-12 col-lg-4">
+                <h3>Acara</h3>
+                <ul class="list-group list-group-flush">
+                    <li *ngFor="let item of data_kategori" class="list-group-item">
+                        <a class="text-info" routerLink="/event/{{item.id}}/{{titleToUrl(item.nama)}}"  [ngClass]="{'active' : item.id == param.kategori}">{{item.nama}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

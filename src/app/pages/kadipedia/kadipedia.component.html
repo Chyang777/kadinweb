@@ -1,0 +1,9 @@
+<div class="row">
+
+    <div *ngFor="let item of wkus" class="col-sm-6 col-md-4 col-lg-4">
+        <div [style.backgroundImage]="'url(' + urls + 'images/' + (item.image ? item.image : 'no-image.jpeg') + ')'" class="image-wku"></div>
+        <h5>{{item.nama}}</h5>
+        <h6>{{item.jabatan}}</h6>
+    </div>
+
+</div>

@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-md-4" *ngFor="let item of galeries">
+        <div class="card">
+            <a class="router-card" [routerLink]="'/publikasi/gallery/detail/' + item.id">
+                <img [src]="urls + 'images/galeri/' + item.image" />
+                <div class="card-body">
+                    <h2 class="title-event">{{item.judul}}</h2>
+                    <h4 class="date"><i class="fa fa-calendar"></i>&nbsp; {{getHari(item.date)}}, {{item.date | date:"dd MMM yyyy" }} </h4>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

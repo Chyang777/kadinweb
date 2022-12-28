@@ -1,0 +1,169 @@
+<footer class="footer">
+  <div class="container">
+    <section class="menu">
+      <div>
+        <div class="row">
+          <div class="col-md-4 col-lg-4 space-bottom">
+            <h4>Program</h4>
+            <ul>
+              <li *ngFor="let item of data_program">
+                <a routerLink="/program/{{item.id}}/{{titleToUrl(item.title)}}">
+                  {{item.title}}
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4 col-lg-4 space-bottom">
+            <h4>Layanan</h4>
+            <ul>
+              <li *ngFor="let item of data_layanan">
+                <a routerLink="/layanan/{{item.id}}/{{titleToUrl(item.title)}}">
+                  {{item.title}}
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-4 col-lg-4 space-bottom">
+            <h4>Acara</h4>
+            <ul>
+              <li *ngFor="let item of event_categories">
+                <a routerLink="/event/{{item.id}}/{{titleToUrl(item.nama)}}">
+                  {{item.nama}}
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-4 col-lg-4 space-bottom">
+            <h4>Dokumen</h4>
+            <ul>
+              <li>
+                <a routerLink="/publikasi/kebijakan-pemerintah">
+                  Kebijakan Pemerintah
+                </a>
+              </li>
+              <li>
+                <a routerLink="/publikasi/regulasi">
+                  Regulasi
+                </a>
+              </li>
+              <li>
+                <a href="https://kadin.id/-dok/organisasi/" target="_blank">
+                  Organisasi KADIN
+                </a>
+              </li>
+              <li>
+                <a href="https://kadin.id/-dok/anggota/" target="_blank">
+                  Keanggotaan
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-4 col-lg-4 space-bottom">
+            <h4>Media</h4>
+            <ul>
+              <li *ngFor="let item of data_kategori_news">
+                <a routerLink="/berita/{{item.id}}/{{titleToUrl(item.nama)}}">
+                  {{item.nama}}
+                </a>
+              </li>
+              <li>
+                <a href="https://kadin.id/-dok/buletin/" target="_blank">
+                  Buletin KADIN
+                </a>
+              </li>
+              <li>
+                <a href="https://kadin.id/-dok/laporan/" target="_blank">
+                  Laporan Kegiatan
+                </a>
+              </li>
+              <li>
+                <a href="https://kadin.id/-dok/annual-report/" target="_blank">
+                  Annual Report
+                </a>
+              </li>
+              <li>
+                <a routerLink="/publikasi/gallery">
+                  Galeri
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-4 col-lg-4 space-bottom">
+            <h4>Tentang</h4>
+            <ul>
+              <li>
+                <a routerLink="/tentang-kami/sejarah">
+                  Sejarah
+                </a>
+              </li>
+              <li>
+                <a routerLink="/tentang-kami/uu-ad-art">
+                  UU/AD/ART Kadin
+                </a>
+              </li>
+              <li>
+                <a routerLink="/tentang-kami/peraturan-pedoman">
+                  Peraturan dan Pedoman Organisasi
+                </a>
+              </li>
+              <li>
+                <a routerLink="/tentang-kami/lambang-mars-hymne">
+                  Lambang Mars & Hymne
+                </a>
+              </li>
+              <li>
+                <a routerLink="/tentang-kami/struktur-organisasi">
+                  Struktur Organisasi
+                </a>
+              </li>
+              <li>
+                <a routerLink="/tentang-kami/visi-misi">
+                  Visi & Misi
+                </a>
+              </li>
+              <li>
+                <a routerLink="/tentang-kami/kadinsupedia">
+                  Kadinsupedia
+                </a>
+              </li>
+              <li>
+                <a routerLink="/tentang-kami/sekretariat">
+                  Sekretariat
+                </a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+
+      </div>
+      <div class="col-md-3">
+        <h3 class="title">Follow us:</h3>
+        <div class="btn-wrapper profile">
+          <a target="_blank" class="btn btn-icon btn-neutral btn-round btn-simple" data-toggle="tooltip"
+            href="https://twitter.com/KadinUtara" data-original-title="Follow us">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a target="_blank" class="btn btn-icon btn-neutral btn-round btn-simple" data-toggle="tooltip"
+            href="https://facebook.com/kadin.sumaterautara" data-original-title="Like us">
+            <i class="fab fa-facebook-square"></i>
+          </a>
+          <a target="_blank" class="btn btn-icon btn-neutral  btn-round btn-simple" data-toggle="tooltip"
+            href="https://instagram.com/kadinsumaterautara" data-original-title="Follow us">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

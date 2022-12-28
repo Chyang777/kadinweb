@@ -1,0 +1,23 @@
+<div class="row">
+    <div *ngFor="let galeri of galeries">
+        <div class="col-md-12">
+            <h2>{{galeri.judul}}</h2>
+            <p class="description" [innerHTML]="galeri.keterangan"></p>
+            <span class="date">{{getHari(galeri.date)}}, {{galeri.date | date:"dd MMM yyyy"}}</span>
+        </div>
+        <div class="row">
+            <div class="col-md-4" *ngFor="let item of galeri.images">
+                <img (click)="toZoom(item.image)" class="image" [src]="urls + 'images/galeri/' + item.image" />
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12" *ngIf="galeries.length<=0 && !isLoading">
+        <h1 class="empty-text">404</h1>
+    </div>
+</div>
+
+<div *ngIf="iszoom" class="lightbox">
+    <a (click)="closeZoom()" class="close"><i class="fa fa-times"></i></a>
+    <img [src]="image" />
+</div>

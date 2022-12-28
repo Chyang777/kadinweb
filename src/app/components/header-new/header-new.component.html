@@ -1,0 +1,362 @@
+<nav class="navbar bg-white bg-white navbar-expand-lg navbar-background fixed-top">
+    <section class="header-section">
+        <div class="elementor-container">
+            <div class="elementor-element" id="kadin-header">
+
+                <div class="elementor-menu">
+                    <ul class="navbar-nav">
+                        <li class="dropdown nav-item" routerLinkActive="active">
+                            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false">
+                                Program
+                            </a>
+                            <div class="dropdown-menu dropdown-with-icons">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+
+                                        <div *ngFor="let banner of banners" class="highlight-banner">
+                                            <div class="background-image">
+                                                <img style="object-fit:cover;"
+                                                    src="{{urls}}images/banner/{{banner.image}}" />
+                                            </div>
+                                            <h6>{{banner.sub_title}}</h6>
+                                            <h4>{{banner.title}}</h4>
+                                            <a *ngIf="banner.url" href="{{banner.url}}" target="_blank" class="btn btn-danger">
+                                                Visit Official Website
+                                            </a>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                        <h4 class="title-sub-menu">Program</h4>
+                                        <a *ngFor="let item of data_program"
+                                            routerLink="/program/{{item.id}}/{{changeTitleToUrl(item.title)}}"
+                                            class="dropdown-item">
+                                            {{item.title}}
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                        <h4 class="title-sub-menu">Kabar Program</h4>
+                                        <div class="news-little" *ngFor="let item of kabar_program">
+                                            <div class="card mb-3 no-border">
+                                                <div class="row no-gutters">
+                                                    <div class="col-md-4 no-border">
+                                                        <img src="{{urls}}images/news/{{item.image}}" class="card-img">
+                                                    </div>
+
+                                                    <div class="col-md-8 no-border">
+                                                        <div class="card-body no-border">
+                                                            <small style="margin-top: -15px; display: block;"
+                                                                class="text-muted font-size1">
+                                                                {{item.pubDate | date:"dd MMMM yyyy"}}
+                                                            </small>
+
+                                                            <a [routerLink]="getLink(item)">
+                                                                <h6 class="card-title">{{item.title}}</h6>
+                                                            </a>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="dropdown nav-item" routerLinkActive="active">
+                            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false">
+                                Layanan
+                            </a>
+                            <div class="dropdown-menu dropdown-with-icons">
+                                <div class="row">
+                                    <div class="col-md-4 col-lg-4 col-sm-6">
+                                        <div *ngFor="let banner of banners" class="highlight-banner">
+                                            <div class="background-image">
+                                                <img style="object-fit:cover;"
+                                                    src="{{urls}}images/banner/{{banner.image}}" />
+                                            </div>
+                                            <h6>{{banner.sub_title}}</h6>
+                                            <h4>{{banner.title}}</h4>
+                                            <a *ngIf="banner.url" href="{{banner.url}}" target="_blank" class="btn btn-danger">
+                                                Visit Official Website
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-lg-4 col-sm-6">
+                                        <h4 class="title-sub-menu">Layanan</h4>
+                                        <a *ngFor="let item of data_layanan"
+                                            routerLink="/layanan/{{item.id}}/{{changeTitleToUrl(item.title)}}"
+                                            class="dropdown-item">
+                                            {{item.title}}
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                        <h4 class="title-sub-menu">Kabar Layanan</h4>
+                                        <div class="news-little" *ngFor="let item of kabar_layanan">
+                                            <div class="card mb-3 no-border">
+                                                <div class="row no-gutters">
+                                                    <div class="col-md-4 no-border">
+                                                        <img src="{{urls}}images/news/{{item.image}}" class="card-img">
+                                                    </div>
+
+                                                    <div class="col-md-8 no-border">
+                                                        <div class="card-body no-border">
+                                                            <small style="margin-top: -15px; display: block;"
+                                                                class="text-muted font-size1">
+                                                                {{item.pubDate | date:"dd MMMM yyyy"}}
+                                                            </small>
+
+                                                            <a [routerLink]="getLink(item)">
+                                                                <h6 class="card-title">{{item.title}}</h6>
+                                                            </a>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <li class="dropdown nav-item" routerLinkActive="active">
+                            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false">
+                                Acara
+                            </a>
+                            <div class="dropdown-menu dropdown-with-icons">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+
+                                        <div *ngFor="let banner of banners" class="highlight-banner">
+                                            <div class="background-image">
+                                                <img style="object-fit:cover;"
+                                                    src="{{urls}}images/banner/{{banner.image}}" />
+                                            </div>
+                                            <h6>{{banner.sub_title}}</h6>
+                                            <h4>{{banner.title}}</h4>
+                                            <a *ngIf="banner.url" href="{{banner.url}}" target="_blank" class="btn btn-danger">
+                                                Visit Official Website
+                                            </a>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                        <h4 class="title-sub-menu">Acara Akan Datang</h4>
+                                        <div class="event-container">
+                                            <a *ngFor="let item of data_events" routerLink="/event-detail/{{item.id}}">
+                                                <div class="calendar-row">
+                                                    <div class="calendar-date">
+                                                        <div class="calendar-date-day">
+                                                            {{item.mulai | date:"dd"}}
+                                                        </div>
+                                                        <div class="calendar-date-month">
+                                                            {{item.mulai | date:"MMM"}}
+                                                        </div>
+                                                    </div>
+                                                    <div class="calendar-event">
+                                                        <h4>{{item.judul}}</h4>
+                                                        <h6><i class="fa fa-user-circle"></i> {{item.category}}</h6>
+                                                    </div>
+                                                </div>
+                                            </a>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                        <h4 class="title-sub-menu">Acara</h4>
+                                        <a *ngFor="let item of event_categories"
+                                            routerLink="/event/{{item.id}}/{{changeTitleToUrl(item.nama)}}"
+                                            class="dropdown-item">
+                                            {{item.nama}}
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="nav-item" routerLinkActive="active">
+                            <a class="nav-link" href="https://kadin.id/forum/" target="_blank">
+                                Forum
+                            </a>
+                        </li>
+
+                        <li class="dropdown nav-item" routerLinkActive="active">
+                            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false">
+                                Media
+                            </a>
+                            <div class="dropdown-menu dropdown-with-icons">
+                                <div class="row">
+                                    <div class="col-md-4 col-lg-4 col-sm-6">
+                                        <h4 class="title-sub-menu">Dokumen</h4>
+                                        <a routerLink="/publikasi/kebijakan-pemerintah" class="dropdown-item">
+                                            Kebijakan Pemerintah
+                                        </a>
+                                        <a routerLink="/publikasi/regulasi" class="dropdown-item">
+                                            Regulasi (UU - Perpres)
+                                        </a>
+                                        <a href="https://kadin.id/-dok/organisasi/" target="_blank"
+                                            class="dropdown-item">
+                                            Organisasi KADIN
+                                        </a>
+                                        <a href="https://kadin.id/-dok/anggota/" target="_blank" class="dropdown-item">
+                                            Keanggotaan
+                                        </a>
+
+                                    </div>
+                                    <div class="col-md-4 col-lg-4 col-sm-6">
+                                        <h4 class="title-sub-menu">Kabar KADIN</h4>
+                                        <a *ngFor="let item of data_kategori_news"
+                                            routerLink="/berita/{{item.id}}/{{changeTitleToUrl(item.nama)}}"
+                                            class="dropdown-item">
+                                            {{item.nama}}
+                                        </a>
+
+                                        <h4 class="title-sub-menu">Media KADIN</h4>
+                                        <a href="https://kadin.id/-dok/annual-report/" target="_blank"
+                                            class="dropdown-item">
+                                            Annual Report
+                                        </a>
+                                        <a href="https://kadin.id/-dok/laporan/" target="_blank" class="dropdown-item">
+                                            Laporan Kegiatan
+                                        </a>
+                                        <a href="https://kadin.id/-dok/buletin/" target="_blank" class="dropdown-item">
+                                            Buletin KADIN
+                                        </a>
+
+                                        <a routerLink="/publikasi/gallery" class="dropdown-item">
+                                            Galeri
+                                        </a>
+
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                        <h4 class="title-sub-menu">Kabar Utama</h4>
+                                        <div class="news-little" *ngFor="let item of kabar_utama">
+                                            <div class="card mb-3 no-border">
+                                                <div class="row no-gutters">
+                                                    <div class="col-md-4 no-border">
+                                                        <img src="{{urls}}images/news/{{item.image}}" class="card-img">
+                                                    </div>
+
+                                                    <div class="col-md-8 no-border">
+                                                        <div class="card-body no-border">
+                                                            <small style="margin-top: -15px; display: block;"
+                                                                class="text-muted font-size1">
+                                                                {{item.pubDate | date:"dd MMMM yyyy"}}
+                                                            </small>
+
+                                                            <a [routerLink]="getLink(item)">
+                                                                <h6 class="card-title">{{item.title}}</h6>
+                                                            </a>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <li class="dropdown nav-item" routerLinkActive="active">
+                            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false">
+                                Tentang
+                            </a>
+                            <div class="dropdown-menu dropdown-with-icons">
+                                <div class="row">
+                                    <div class="col-md-4 col-lg-4 col-sm-6">
+                                        <div *ngFor="let banner of banners" class="highlight-banner">
+                                            <div class="background-image">
+                                                <img style="object-fit:cover;"
+                                                    src="{{urls}}images/banner/{{banner.image}}" />
+                                            </div>
+                                            <h6>{{banner.sub_title}}</h6>
+                                            <h4>{{banner.title}}</h4>
+                                            <a *ngIf="banner.url" href="{{banner.url}}" target="_blank" class="btn btn-danger">
+                                                Visit Official Website
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-lg-4 col-sm-6">
+                                        <h4 class="title-sub-menu">KADIN SUMUT</h4>
+                                        <a routerLink="/tentang-kami/sejarah" class="dropdown-item">
+                                            Sejarah
+                                        </a>
+                                        <a routerLink="/tentang-kami/uu-ad-art" class="dropdown-item">
+                                            UU/AD/ART Kadin
+                                        </a>
+                                        <a routerLink="/tentang-kami/peraturan-pedoman" class="dropdown-item">
+                                            Peraturan dan Pedoman Organisasi
+                                        </a>
+                                        <a routerLink="/tentang-kami/lambang-mars-hymne" class="dropdown-item">
+                                            Lambang Mars & Hymne
+                                        </a>
+                                        <a routerLink="/tentang-kami/struktur-organisasi" class="dropdown-item">
+                                            Struktur Organisasi
+                                        </a>
+
+                                        <a routerLink="/tentang-kami/visi-misi" class="dropdown-item">
+                                            Visi & Misi
+                                        </a>
+                                        <a routerLink="/tentang-kami/kadinsupedia" class="dropdown-item">
+                                            Kadinsupedia
+                                        </a>
+                                        <a routerLink="/tentang-kami/sekretariat" class="dropdown-item">
+                                            Sekretariat
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                        <h4 class="title-sub-menu">Kantor</h4>
+                                        <div class="address">
+                                            <p>Jl. Sekip Baru No. 16 Medan. 20112 Sumatera Utara - Indonesia</p>
+                                            <p>&nbsp;</p>
+                                            <p>Telp. (62-61) 4523654 (Hunting). 4527799</p>
+                                            <p>Fax. (62-61) 4147192</p>
+                                            <p>Email : kadin_sumut@hotmail.com / lpu.kadinsumut@gmail.com</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <li class="nav-item" routerLinkActive="active">
+                            <a class="nav-link" href="https://kadin.id/kontak/" target="_blank">
+                                Kontak
+                            </a>
+                        </li>
+                        <li>
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <a href="https://mms.kadin.id/#!/" target="_blank"
+                                    class="btn btn-outline-warning btn-sm">Daftar</a>
+                                <a href="https://kadin.id/masuk/" target="_blank" type="button"
+                                    class="btn btn-warning btn-sm">Masuk</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="elementor-logo">
+                    <div>
+                        <a routerLink="/">
+                            <img src="./assets/images/logo-kadin.png" />
+                        </a>
+                    </div>
+                </div>
+                <div class="elementor-text">
+                    <a routerLink="/">
+                        <h1>KAMAR DAGANG DAN INDUSTRI SUMATERA UTARA</h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</nav>

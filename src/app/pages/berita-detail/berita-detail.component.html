@@ -1,0 +1,65 @@
+<section class="section-event">
+    <div class="container">
+        <div class="row" *ngIf="news.title">
+            <div class="col-md-12 col-lg-8">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="big-news">
+                            <img src="{{urls}}images/news/{{news.image}}" />
+                            <span class="date"> {{news.kategori}} - {{getDay(news.pubDate)}}, {{news.pubDate | date:"dd
+                                MMMM yyyy"}}</span>
+                            <br />
+
+                            <h2 class="news-title">
+                                {{news.title}}
+                            </h2>
+
+                            <div class="content" [innerHTML]="news.content"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 col-lg-12">
+                        <h1 class="title-big">Berita Lainnya</h1>
+                        <hr class="line-success">
+                    </div>
+
+
+                    <div class="col-md-12 col-lg-6" *ngFor="let item of others">
+                        <div class="card mb-3 no-border">
+                            <div class="row no-gutters">
+                                <div class="col-md-4 no-border">
+                                    <img src="{{urls}}images/news/{{item.image}}" class="card-img">
+                                </div>
+
+                                <div class="col-md-8 no-border">
+                                    <div class="card-body no-border">
+                                        <a [routerLink]="getLink(item)">
+                                            <h6 class="card-title">{{item.title}}</h6>
+                                        </a>
+                                        <small class="text-muted font-size1">
+                                            {{item.pubDate | date:"dd MMMM yyyy"}}
+                                        </small>
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div *ngIf="categories.length>0" class="col-md-12 col-lg-4">
+                <h3>Kabar KADIN</h3>
+                <ul class="list-group list-group-flush">
+                    <li *ngFor="let itm of categories; let i = index" class="list-group-item">
+                        <a routerLink="/berita/{{itm.id}}/{{titleToUrl(itm.nama)}}" class="text-info"
+                            [ngClass]="{'active' : itm.id == news.id_kategori}">{{itm.nama}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

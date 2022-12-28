@@ -1,0 +1,39 @@
+.date{
+    margin-bottom: 20px;
+    display: block;
+}
+
+.image{
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.lightbox{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.8);
+    z-index: 2222;
+    text-align: center;
+    display: flex; // This says treat this element like a table cell
+    vertical-align:middle; //
+
+    .close{
+        font-size: 30px;
+        position: absolute;
+        right: 10px;
+        top:10px;
+        color: #fff;
+        opacity: 1;
+        cursor: pointer;
+    }
+
+    img{
+        width: 80%;
+        margin: auto;
+    }
+}

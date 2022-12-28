@@ -1,0 +1,16 @@
+<div class="row">
+
+    <div *ngFor="let item of wkus" class="col-sm-6 col-md-4 col-lg-4">
+        <div [style.backgroundImage]="'url(' + urls + 'images/' + (item.image ? item.image : 'no-image.jpeg') + ')'" class="image-wku"></div>
+        <h5>{{item.nama}}</h5>
+        <h6>{{item.jabatan}}</h6>
+    </div>
+
+    <div *ngIf="!isLoading && wkus.length<=0" class="col-sm-12 col-md-12 col-lg-12">
+        <div class="empty-sign">
+            <i class="fas fa-exclamation"></i>
+            <p>Ups, data sekretariat masih kosong</p>
+        </div>
+    </div>
+
+</div>

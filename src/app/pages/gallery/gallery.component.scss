@@ -1,0 +1,38 @@
+.section-event{
+    min-height: 100vh;
+    background-color: white;
+    padding-top: 120px;
+    padding-bottom: 40px;
+}
+
+.title-event{
+    font-size: 1rem;
+    margin-bottom: 10px;
+    display: block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    margin: 0;
+    height: 40px;
+    line-height: 19px;
+    overflow: hidden;
+    color: #4c4c4c;
+    word-wrap: break-word;
+}
+
+h4.date{
+    font-size: .7rem;
+    color: #888;
+}
+
+a{
+    cursor: pointer;
+}
+
+a.active{
+    font-weight: bold;
+}
+
+a.router-card{
+    color: unset !important;
+}

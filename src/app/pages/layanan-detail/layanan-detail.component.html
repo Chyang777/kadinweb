@@ -1,0 +1,60 @@
+<section class="section-event">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="small-title">Layanan</h3>
+                <h2 class="big-title">{{layanan.title}}</h2>
+            </div>
+        </div>
+        <div class="row" style="background-color: white;">
+            <div class="col-md-3 col-lg-3 space-bottom">
+                <h3>Layanan</h3>
+                <ul class="list-group list-group-flush">
+                    <li *ngFor="let item of data_layanan" class="list-group-item">
+                        <a routerLink="{{getLink(item)}}" class="text-dark active">{{item.title}}</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-6 col-lg-6 space-bottom">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="big-news">
+                            <div class="content" [innerHTML]="layanan.long_description || layanan.short_description"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-3 col-lg-3">
+                <h3>Kabar Layanan</h3>
+
+                <div class="news-little" *ngFor="let item of kabar_layanan">
+                    <div class="card mb-3 no-border">
+                        <div class="row no-gutters">
+                            <div class="col-md-4 no-border">
+                                <img src="{{urls}}images/news/{{item.image}}" class="card-img">
+                            </div>
+
+                            <div class="col-md-8 no-border">
+                                <div class="card-body no-border">
+                                    <small style="margin-top: -15px; display: block;" class="text-muted font-size1">
+                                        {{item.pubDate | date:"dd MMMM yyyy"}}
+                                    </small>
+
+                                    <a [routerLink]="getLink(item)">
+                                        <h6 class="card-title">{{item.title}}</h6>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>

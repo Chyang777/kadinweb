@@ -1,0 +1,45 @@
+img {
+    border-radius: 0;
+}
+
+* {
+    color: #525f7f;
+}
+
+.address {
+    h4 {
+        color: #525f7f;
+        font-size: 1.3rem;
+    }
+
+    p {
+        color: #525f7f;
+    }
+}
+
+.footer {
+    background-color: #ECECEC;
+}
+
+.menu {
+    margin-bottom: 10px;
+
+    h4 {
+        font-size: 14px;
+        font-weight: bold;
+        color: #000080;
+    }
+}
+
+ul {
+    list-style: none;
+    padding-left: 2px;
+}
+
+li {
+    margin-bottom: 8px;
+
+    a {
+        color: #444;
+    }
+}

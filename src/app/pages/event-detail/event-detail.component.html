@@ -1,0 +1,43 @@
+<section class="section-event">
+    <div class="container">
+        <div class="row" *ngFor="let item of event">
+            <div class="col-md-12 col-lg-3">
+                <div class="card date-location">
+                    <div class="card-body">
+                        <h6>{{item.kategori}}</h6>
+                        <h6>{{item.lokasi}}</h6>
+                        <div class="label">Mulai</div>
+                        <div class="date">{{getHari(item.mulai)}}, {{item.mulai | date:"dd MMM yyyy HH:mm"}}</div>
+                        <span class="line"></span>
+                        <div *ngIf="item.berakhir" class="label">Berakhir</div>
+                        <div *ngIf="item.berakhir" class="date">{{getHari(item.berakhir)}}, {{item.berakhir | date:"dd MMM yyyy HH:mm"}}</div>
+                    </div>
+
+                    <div class="card-footer">
+                        <button [disabled]="!item.gform || (now>getTime(item.mulai))" (click)="doRegister(item.gform)" class="btn btn-success">
+                            Register
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12 col-lg-6">
+                <div class="event-image">
+                    <img src="{{urls}}images/events/{{item.image}}" />
+                </div>
+
+                <div class="event-detail">
+                    <h2 class="title-event">{{item.judul}}</h2>
+
+                    <p [innerHTML]="item.keterangan"></p>
+                </div>
+            </div>
+
+            <div class="col-md-12 col-lg-3">
+                
+            </div>
+        </div>
+
+        <h1 *ngIf="event.length<=0 && !isLoading" class="error">404</h1>
+    </div>
+</section>

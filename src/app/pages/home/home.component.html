@@ -1,0 +1,202 @@
+<section class="section-poster">
+    <div class="container">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li *ngFor="let item of sliders; let i = index" data-target="#carouselExampleIndicators"
+                    data-slide-to="0" [ngClass]="{'active' : i == 0}"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div *ngFor="let item of sliders; let i = index" class="carousel-item" [ngClass]="{'active' : i == 0}"
+                    style="border-radius: 5px; overflow:hidden">
+                    <img class="d-block w-100 image-slider-news" src="{{urls}}images/news/{{item.image}}"
+                        alt="First slide">
+                    <div class="elementor-background-overlay"></div>
+                    <div class="carousel-caption d-md-block">
+                        <a class="text-white" routerLink="/berita/baca/{{item.id}}/{{changeTitleToUrl(item.title)}}">
+                            <h1 class="title-news-slider">{{item.title}}</h1>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev text-info" href="#carouselExampleIndicators" role="button"
+                data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next text-info" href="#carouselExampleIndicators" role="button"
+                data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="section-news" style="background-color: #F3F3F3;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-lg-8 col-sm-12 space-bottom">
+                <div>
+                    <a routerLink="" class="title-section">
+                        <h2>Program</h2>
+                    </a>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 tab-list-container">
+                        <ul class="nav nav-pills flex-column">
+                            <li *ngFor="let program of data_program; let i = index" class="nav-item">
+                                <a class="nav-link" [ngClass]="{'active' : i == index_program}" aria-current="page"
+                                    (click)="setIndexProgram(i)">
+                                    {{program.title}}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-8 tab-content-container">
+                        <div class="container-content">
+                            <p [innerHTML]="getShortDescProgram()"></p>
+                            <br />
+                            <p>
+                                <a routerLink="{{getLinkProgram()}}">Selengkapnya</a>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-4 col-lg-4 col-sm-12 space-bottom">
+                <div>
+                    <a routerLink="" class="title-section">
+                        <h2>Layanan</h2>
+                    </a>
+                </div>
+                <div class="layanan-container">
+                    <div class="card">
+                        <div class="card-body">
+                            <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div *ngFor="let item of data_layanan; let i = index" class="carousel-item"
+                                        [ngClass]="{'active' : i == 0}" style="border-radius: 5px; overflow:hidden">
+                                        <div class="carousel-caption caption-slider-layanan d-md-block">
+                                            <a routerLink="/layanan/{{item.id}}/{{changeTitleToUrl(item.title)}}">
+                                                <h1 class="title-layanan-slider">{{item.title}}</h1>
+                                                <p>
+                                                    {{item.short_description}}
+                                                </p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="carousel-control-prev text-info" href="#carouselExampleIndicators2"
+                                    role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next text-info" href="#carouselExampleIndicators2"
+                                    role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section-news">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-lg-8 col-sm-12 space-bottom">
+                <a routerLink="/berita/kadin-sumut" class="title-section">
+                    <h2>Kabar</h2>
+                </a>
+
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 col-lg-4" *ngFor="let item of bigNews">
+                        <a class="highlight-news"
+                            routerLink="/berita/baca/{{item.id}}/{{changeTitleToUrl(item.title)}}">
+                            <div class="background-image">
+                                <img style="object-fit:cover;" src="{{urls}}images/news/{{item.image}}" />
+                            </div>
+                            <h4>{{item.title}}</h4>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-lg-4 col-sm-12 space-bottom">
+                <a routerLink="/berita/kadin-sumut" class="title-section">
+                    <h2>Acara Akan Datang</h2>
+                </a>
+                <div class="event-container">
+                    <a *ngFor="let item of events" routerLink="/event-detail/{{item.id}}">
+                        <div class="calendar-row">
+                            <div class="calendar-date">
+                                <div class="calendar-date-day">
+                                    {{item.mulai | date:"dd"}}
+                                </div>
+                                <div class="calendar-date-month">
+                                    {{item.mulai | date:"MMM"}}
+                                </div>
+                            </div>
+                            <div class="calendar-event">
+                                <h4>{{item.judul}}</h4>
+                                <h6><i class="fa fa-user-circle"></i> {{item.category}}</h6>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="section-about space-bottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-12">
+                <div class="title-section">
+                    <h2>Tentang Kadin SUMUT</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 col-lg-4 space-bottom">
+                <img src="./assets/images/logo-kadin-big.png" />
+            </div>
+            <div class="col-md-8 col-lg-4">
+                <p>
+                    Pengusaha Indonesia menyadari sedalam-dalamnya bahwa dunia usaha nasional yang tangguh merupakan
+                    tulang punggung perekonomian nasional yang sehat dan dinamis dalam mewujudkan pemerataan, keadilan
+                    dan kesejahteraan rakyat, serta memperkokoh persatuan dan kesatuan bangsa dalam upaya meningkatkan
+                    ketahanan nasional dalam percaturan perekonomian regional dan internasional.
+                </p>
+                <br />
+                <p>
+                    <a class="text-info" routerLink="/tentang-kami/sejarah">Selengkapnya</a>
+                </p>
+            </div>
+
+            <div class="col-md-4 col-lg-4">
+                <div *ngFor="let banner of banners" class="highlight-banner">
+                    <div class="background-image">
+                        <img style="object-fit:cover;" src="{{urls}}images/banner/{{banner.image}}" />
+                    </div>
+                    <h6>{{banner.sub_title}}</h6>
+                    <h4>{{banner.title}}</h4>
+                    <a *ngIf="banner.url" href="{{banner.url}}" target="_blank" class="btn btn-danger">
+                        Visit Official Website
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

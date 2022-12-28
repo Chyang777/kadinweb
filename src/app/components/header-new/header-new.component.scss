@@ -1,0 +1,341 @@
+navbar {
+    background-color: white !important;
+}
+
+.navbar .navbar-nav .nav-item .nav-link {
+    font-weight: 500;
+}
+
+.header-section {
+    border-style: solid;
+    border-width: 10px 0px 0px 0px;
+    border-color: #CC0000;
+    box-shadow: 0px 0px 15px 5px rgb(0 0 0 / 15%);
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+    z-index: 99;
+
+    position: fixed;
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    top: 0px;
+    background-color: white;
+}
+
+.elementor-container {
+    min-height: 45px;
+    max-width: 1140px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+}
+
+.elementor-element {
+    width: 100%;
+    --widgets-spacing: 10px;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    min-height: 1px;
+
+    --flex-direction: initial;
+    --flex-wrap: initial;
+    --justify-content: initial;
+    --align-items: initial;
+    --align-content: initial;
+    --gap: initial;
+    --flex-basis: initial;
+    --flex-grow: initial;
+    --flex-shrink: initial;
+    --order: initial;
+    --align-self: initial;
+    -ms-flex-preferred-size: var(--flex-basis);
+    flex-basis: var(--flex-basis);
+    -webkit-box-flex: var(--flex-grow);
+    -ms-flex-positive: var(--flex-grow);
+    flex-grow: var(--flex-grow);
+    -ms-flex-negative: var(--flex-shrink);
+    flex-shrink: var(--flex-shrink);
+    -webkit-box-ordinal-group: var(--order);
+    -ms-flex-order: var(--order);
+    order: var(--order);
+    -ms-flex-item-align: var(--align-self);
+    align-self: var(--align-self);
+}
+
+#kadin-header::after {
+    height: 70px;
+    left: -830px;
+
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    top: -15px;
+    z-index: -1;
+    background: #000070;
+    background: linear-gradient(90deg, rgba(0, 0, 112, 1) 80%, rgba(0, 0, 204, 1) 100%);
+    box-shadow: 0 0 15px 5px rgb(0 0 0 / 30%);
+    -webkit-box-shadow: 0 0 15px 5px rgb(0 0 0 / 30%);
+    -moz-box-shadow: 0 0 15px 5px rgba(0, 0, 0, .3);
+    border-bottom-right-radius: 10px;
+    transform: skew(-25deg);
+}
+
+.elementor-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    align-content: center;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 5px 5px 5px 5px;
+
+    position: relative;
+    width: 100%;
+}
+
+.elementor-logo {
+    width: 52px;
+    max-width: 52px;
+    left: 5px;
+    position: absolute;
+
+    div {
+        --widgets-spacing: 10px;
+
+        a {
+            display: inline-block;
+            box-shadow: none;
+            text-decoration: none;
+            width: 52px;
+            max-width: 52px;
+            height: 52px;
+            cursor: pointer;
+            box-sizing: border-box;
+
+            img {
+                width: 52px;
+                max-width: 52px;
+                height: 52px;
+                object-fit: cover;
+                border-radius: 0px 0px 0px 0px;
+                margin-top: -5px;
+            }
+        }
+    }
+}
+
+.elementor-text {
+    left: 65px;
+    text-align: left;
+    width: 250px;
+    max-width: 250px;
+    top: 5px;
+    position: absolute;
+
+    h1 {
+        color: white;
+        font-family: "Roboto Condensed", Sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        text-transform: uppercase;
+        line-height: 1em;
+        letter-spacing: -1px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .elementor-text{
+        width: 160px;
+        max-width: 160px;
+    }
+    .elementor-container {
+        max-width: 1024px;
+        flex-wrap: wrap;
+    }
+
+    .elementor-element {
+        align-content: center;
+    }
+
+    .elementor-logo {
+        left: 10px;
+    }
+
+    #kadin-header::after {
+        left: -690px;
+    }
+}
+
+@media (min-width: 720px) {
+    .elementor-element {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 901px) {
+    .elementor-element {
+        width: 100%;
+    }
+
+    .elementor-text {
+    
+        h1 {
+           
+            font-size: 15px;
+        }
+    }
+
+    #kadin-header::after {
+        left: -666px;
+    }
+}
+
+.dropdown.nav-item {
+    position: unset !important;
+
+    .dropdown-menu {
+        width: 98%;
+        left: 0;
+        top: 90% !important;
+        max-height: 80vh;
+
+        padding-top: 35px;
+        padding-bottom: 35px;
+        z-index: -2;
+        overflow: auto;
+
+        .title-sub-menu {
+            font-size: 16px;
+            font-weight: bold;
+            color: #000070;
+            margin-left: 20px;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        .dropdown-item {
+            font-size: 14px;
+            padding-top: 0.5rem !important;
+            padding-bottom: 0.5rem !important;
+        }
+    }
+
+    .dropdown-menu:before {
+        display: none !important;
+    }
+}
+
+.address {
+    p {
+        color: #525f7f;
+        padding-left: 20px;
+    }
+}
+
+.btn-group {
+    .btn {
+        margin: 0 !important;
+        font-size: 11px;
+        margin-top: 5px !important;
+    }
+}
+
+.card-title {
+    color: #333 !important;
+    margin-top: 0px;
+    font-size: 14px;
+}
+
+.title-big {
+    margin-top: 35px;
+    font-size: 21px;
+}
+
+.card {
+    box-shadow: none !important;
+}
+
+.content {
+    white-space: pre-line;
+}
+
+
+.highlight-banner {
+    position: relative;
+    border-radius: 4px;
+    background-size: cover;
+    background-attachment: no-repeat;
+    background-position: 50%;
+    padding: 20px;
+    height: 430px;
+    width: 95%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+
+    img{
+        height: 430px;
+        width: 334px;
+    }
+
+    .date {
+        position: relative;
+        z-index: 2;
+        font-size: 14px;
+        font-weight: 700;
+        color: #fff;
+        display: block;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+    }
+
+    h4 {
+        position: relative;
+        z-index: 2;
+        line-height: 1.1;
+        font-size: 22px;
+        font-weight: 600;
+        color: #fff;
+    }
+
+    h6{
+        position: relative;
+        z-index: 2;
+        line-height: 1.1;
+        font-size: 16px;
+        font-weight: 600;
+        color: #fff;
+        text-transform: none;
+    }
+
+    .btn-danger{
+        background: #CC0000 !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        position: relative;
+        z-index: 3;
+        border: none !important;
+        margin: 0 !important;
+    }
+
+    .background-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.navbar-nav li{
+    padding: 0 !important;
+}

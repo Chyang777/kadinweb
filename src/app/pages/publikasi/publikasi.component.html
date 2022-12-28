@@ -1,0 +1,24 @@
+<section class="section-event">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-8">
+                <router-outlet></router-outlet>
+            </div>
+
+            <div class="col-md-12 col-lg-4">
+                <h3>Publikasi</h3>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" >
+                        <a routerLinkActive="active" routerLink="/publikasi/gallery" class="text-info">Gallery</a>
+                    </li>
+                    <li class="list-group-item" >
+                        <a routerLinkActive="active" routerLink="/publikasi/kebijakan-pemerintah" class="text-info">Kebijakan Pemerintah</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a routerLinkActive="active" routerLink="/publikasi/regulasi" class="text-info">Regulasi (UU - Perpres)</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
